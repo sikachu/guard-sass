@@ -114,6 +114,9 @@ The following options can be passed to guard-sass:
     :debug_info => true                 # File and line number info for FireSass.
                                         # default: false
 
+    :line_numbers => true               # Add source filename and line number as a comment
+                                        # default: false
+
 ### Output Short Notation
 
 guard-sass also has a short notation like [guard-coffeescript][gcs], this lets

@@ -17,6 +17,7 @@ module Guard
       :debug_info   => false,
       :noop         => false,
       :hide_success => false,
+      :line_numbers => false,
       :load_paths   => Dir.glob('**/**').find_all {|i| File.directory?(i) }
     }
 
@@ -38,6 +39,8 @@ module Guard
     #   Whether to hide all success messages
     # @option options [Symbol] :style
     #   See http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#output_style
+    # @option options [Boolean] :line_numbers
+    #   Whether to display line number as comment in the file
     def initialize(watchers=[], options={})
       if options[:input]
         options[:output] = options[:input] unless options.has_key?(:output)

@@ -65,7 +65,8 @@ describe Guard::Sass::Runner do
       mock_engine = mock(::Sass::Engine)
       ::Sass::Engine.should_receive(:new).with('', {
         :syntax => :sass, :load_paths => ['sass'], 
-        :style => :nested, :debug_info => false
+        :style => :nested, :debug_info => false,
+        :line_numbers => false
       }).and_return(mock_engine)
       mock_engine.should_receive(:render)
       

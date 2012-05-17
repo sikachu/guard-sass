@@ -21,7 +21,7 @@ describe Guard::Sass do
     end
     
     context 'when options given' do
-      subject { Guard::Sass.new([], {:noop => true, :hide_success => true, :style => :compact}) }
+      subject { Guard::Sass.new([], {:noop => true, :hide_success => true, :style => :compact, :line_numbers => true}) }
     
       it 'merges them with defaults' do
         subject.options.should == {
@@ -33,6 +33,7 @@ describe Guard::Sass do
           :debug_info   => false,
           :noop         => true,
           :hide_success => true,
+          :line_numbers => true,
           :load_paths   => Dir.glob('**/**').find_all {|i| File.directory?(i) }
         }
       end
